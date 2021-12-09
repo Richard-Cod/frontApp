@@ -28,8 +28,13 @@ export default {
   },
   mounted() {
     this.token = localStorage.getItem('myToken');
+
+    const backendUrl = process.env.VUE_APP_BACKEND_URL
+    alert(backendUrl)
+
+
     console.log(this.token);
-    axios.get('http://localhost:8000/api/post')
+    axios.get(`${process.env.VUE_APP_BACKEND_URL}/api/post`)
       .then((response) => {
         console.log(response.data);
         this.posts = response.data;

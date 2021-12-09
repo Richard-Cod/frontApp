@@ -149,7 +149,7 @@ export default {
   methods: {
     poster(event) {
       event.preventDefault();
-      axios.post("http://localhost:8000/api/post", {
+      axios.post(process.env.VUE_APP_BACKEND_URL+"/api/post", {
           titre: this.titre,
           theme: this.theme,
           auteur: this.auteur,
@@ -167,7 +167,7 @@ export default {
           console.log(error);
         }),
         axios
-          .get("http://localhost:8000/api/post", {})
+          .get(process.env.VUE_APP_BACKEND_URL+"/api/post", {})
           .then((response) => {
             console.log(response.data);
           })

@@ -44,7 +44,7 @@ export default {
     this.auteur = localStorage.getItem('auteur');
     this.date = localStorage.getItem('date');
     this.contenu = localStorage.getItem('contenu');
-    axios.get('http://localhost:8000/api/comment/')
+    axios.get(process.env.VUE_APP_BACKEND_URL+'/api/comment/')
     .then((response) => {
       console.log(response.data);
       response.data.forEach(result => {

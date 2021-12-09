@@ -118,7 +118,7 @@ export default {
     poster(event) {
       event.preventDefault();
       axios
-        .post("http://localhost:8000/api/comment", {
+        .post(process.env.VUE_APP_BACKEND_URL+"/api/comment", {
           id_post: this.id_post,
           auteur: this.auteur,
           date: this.date,
@@ -136,7 +136,7 @@ export default {
           console.log(error);
         }),
         axios
-          .get("http://localhost:8000/api/comment", {})
+          .get(process.env.VUE_APP_BACKEND_URL+"/api/comment", {})
           .then((response) => {
             console.log(response.data);
           })

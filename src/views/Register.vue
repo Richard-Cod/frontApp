@@ -1,6 +1,7 @@
 <template>
-<router-link to="/">Home</router-link>
   <div class="Login">
+  <router-link to="/">Home</router-link>
+
     <div class="block">
       <div class="flex justify-center items-center">
         <form
@@ -153,6 +154,7 @@
       </router-link>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -190,7 +192,7 @@ export default {
       .catch((error) => {
         console.log(error);
       }),
-        axios.get('http://localhost:8000/api/user', {      
+        axios.get(process.env.VUE_APP_BACKEND_URL+'/api/user', {      
       })
       .then((response) => {
         console.log(response.data);

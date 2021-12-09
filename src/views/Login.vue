@@ -95,7 +95,7 @@ export default {
   methods: {
     login(event){
       event.preventDefault()
-      axios.post('http://localhost:8000/api/connexion', {
+      axios.post(process.env.VUE_APP_BACKEND_URL+'/api/connexion', {
         email: this.login.email,
         password: this.login.password,
       })
